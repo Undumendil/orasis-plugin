@@ -7,13 +7,12 @@ readme = "README.md"
 keywords = ["plugin"]
 categories = ["graphics", "multimedia::images"]
 license = "GPL-3.0-or-later"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Undumendil <azathtoth@protonmail.com>"]
 edition = "2018"
 
 [badges]
 travis-ci = { repository = "Undumendil/orasis-plugin" }
-maintenance = { status = "actively-maintained" }
 
 [dependencies]
 termion = "~1.5.3"

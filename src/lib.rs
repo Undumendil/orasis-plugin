@@ -46,9 +46,9 @@ pub struct VirtualCanvas<'a> {
     pub overlay: &'a mut [char]
 }
 
-pub trait ImageEditorPlugin<E: Emit> {
+pub trait ImageEditorPlugin {
     /// Store emitter to be able to send events later.
-    fn new<T: ImageEditorPlugin<E>>(emitter: &E) -> T;
+    fn new<T: ImageEditorPlugin>(emitter: &dyn Emit) -> T;
     
     /// Plugin-unique identifier. May be used in `EventData.target_id`.
     fn id() -> String;

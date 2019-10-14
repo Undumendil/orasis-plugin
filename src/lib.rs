@@ -30,7 +30,7 @@ pub enum Event {
 
 pub trait Emit {
     /// Return value: whether the event was accepted.
-    fn emit(ev: Event) -> bool;
+    fn emit(&self, ev: Event) -> bool;
 }
 
 /// Here plugins do their changes.

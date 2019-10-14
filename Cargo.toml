@@ -7,7 +7,7 @@ readme = "README.md"
 keywords = ["plugin"]
 categories = ["graphics", "multimedia::images"]
 license = "GPL-3.0-or-later"
-version = "0.4.0"
+version = "0.5.0"
 authors = ["Undumendil <azathtoth@protonmail.com>"]
 edition = "2018"
 

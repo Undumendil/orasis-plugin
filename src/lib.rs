@@ -1,12 +1,12 @@
 pub struct EventData {
     /// Plugin intended to receive the event. Use None to trigger processing by plugin manager.
-    target_id: Option<String>,
+    pub target_id: Option<String>,
     /// A short string describing type of event.
-    meta: String,
+    pub meta: String,
     /// Optional String receiver.
-    message: Option<std::sync::mpsc::Receiver<String>>,
+    pub message: Option<std::sync::mpsc::Receiver<String>>,
     /// Optional u64 receiver.
-    data: Option<std::sync::mpsc::Receiver<u64>>
+    pub data: Option<std::sync::mpsc::Receiver<u64>>
 }
 
 pub enum Event {
@@ -27,15 +27,15 @@ pub trait Emit {
 
 /// 
 pub struct VirtualCanvas<'a> {
-    width: u64,
-    height: u64,
+    pub width: u64,
+    pub height: u64,
     /// ARGB data; access pixels with [y * width + x].
-    data: &'a mut [u32],
+    pub data: &'a mut [u32],
 
-    o_widrh: u64,
-    o_height: u64,
+    pub o_widrh: u64,
+    pub o_height: u64,
     /// Overlay as visible on the screen; access pixels with [y * o_width + x].
-    overlay: &'a mut [char]
+    pub overlay: &'a mut [char]
 }
 
 pub trait ImageEditorPlugin<E: Emit> {

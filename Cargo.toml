@@ -6,7 +6,7 @@ documentation = "https://docs.rs/orasis-plugin"
 keywords = ["plugin"]
 categories = ["graphics", "multimedia::images"]
 license = "GPL-3.0-or-later"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Undumendil <azathtoth@protonmail.com>"]
 edition = "2018"
 

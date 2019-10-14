@@ -43,20 +43,20 @@ pub struct VirtualCanvas<'a> {
 
 pub trait ImageEditorPlugin {
     /// Store emitter to be able to send events later.
-    fn setup(emitter: &mut std::sync::mpsc::Sender<Event>);
+    fn setup(&mut self, emitter: &mut std::sync::mpsc::Sender<Event>);
     
     /// Plugin-unique identifier. May be used in `EventData.target_id`.
-    fn id() -> String;
+    fn id(&self) -> String;
     
     /// Plugin is starting to be used.
-    fn activate(&self, canvas: &VirtualCanvas);
+    fn activate(&mut self, canvas: &VirtualCanvas);
     
     /// Plugin may draw some additional overlay there.
     fn draw(&self, canvas: &mut VirtualCanvas);
 
     /// Return value: whether this plugin consumes the event.
-    fn act(&self, ev: Event, canvas: &mut VirtualCanvas) -> bool;
+    fn act(&mut self, ev: Event, canvas: &mut VirtualCanvas) -> bool;
     
     /// Plugin is deactivated. It may be activated again later.
-    fn deactivate(&self);
+    fn deactivate(&mut self);
 }

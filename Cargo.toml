@@ -1,7 +1,7 @@
 [package]
 name = "orasis-plugin"
 description = "Base crate for Orasis plugins"
-reposietory = "https://github.com/Undumendil/orasis-plugin"
+repository = "https://github.com/Undumendil/orasis-plugin"
 keywords = ["plugin"]
 categories = ["graphics", "multimedia::images"]
 license = "GPLv3"

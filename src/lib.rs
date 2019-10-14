@@ -26,21 +26,21 @@ pub trait Emit {
 }
 
 /// 
-pub struct VirtualCanvas {
+pub struct VirtualCanvas<'a> {
     width: u64,
     height: u64,
     /// ARGB data; access pixels with [y * width + x].
-    data: [u32],
+    data: &'a mut [u32],
 
     o_widrh: u64,
     o_height: u64,
     /// Overlay as visible on the screen; access pixels with [y * o_width + x].
-    overlay: [char]
+    overlay: &'a mut [char]
 }
 
-pub trait ImageEditorPlugin {
+pub trait ImageEditorPlugin<E: Emit> {
     /// Store emitter to be able to send events later.
-    fn new<T: ImageEditorPlugin<E: Emit>>(emitter: &E) -> T;
+    fn new<T: ImageEditorPlugin<E>>(emitter: &E) -> T;
     
     /// Plugin-unique identifier. May be used in `EventData.target_id`.
     fn id() -> String;

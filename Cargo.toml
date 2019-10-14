@@ -1,0 +1,17 @@
+[package]
+name = "orasis-plugin"
+description = "Base crate for Orasis plugins"
+reposietory = "https://github.com/Undumendil/orasis-plugin"
+keywords = ["plugin"]
+categories = ["graphics", "multimedia::images"]
+license = "GPLv3"
+version = "0.1.0"
+authors = ["Undumendil <azathtoth@protonmail.com>"]
+edition = "2018"
+
+[badges]
+travis-ci = { repository = "Undumendil/orasis-plugin" }
+maintenance = { status = "actively-maintained" }
+
+[dependencies]
+termion = "~1.5.3"

@@ -7,13 +7,13 @@
 // (at your option) any later version.
 
 pub struct EventData {
-    /// Plugin intended to receive the event. Use None to trigger processing by plugin manager.
+    /// Plugin intended to receive the event. Use `None` to trigger processing by plugin manager.
     pub target_id: Option<String>,
     /// A short string describing type of event.
     pub meta: String,
-    /// Optional String receiver.
+    /// Optional `String` receiver.
     pub message: Option<std::sync::mpsc::Receiver<String>>,
-    /// Optional u64 receiver.
+    /// Optional `u64` receiver.
     pub data: Option<std::sync::mpsc::Receiver<u64>>
 }
 

@@ -1,3 +1,11 @@
+// Base crate for Orasis plugins.
+// Copyright (C) 2019 Daniil Fomichev
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
 pub struct EventData {
     /// Plugin intended to receive the event. Use None to trigger processing by plugin manager.
     pub target_id: Option<String>,
@@ -25,7 +33,7 @@ pub trait Emit {
     fn emit(ev: Event) -> bool;
 }
 
-/// 
+/// Here plugins do their changes.
 pub struct VirtualCanvas<'a> {
     pub width: u64,
     pub height: u64,

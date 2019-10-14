@@ -30,7 +30,7 @@ pub enum Event {
 
 pub trait Emit {
     /// Return value: whether the event was accepted.
-    fn emit(&self, ev: Event) -> bool;
+    fn emit(&mut self, ev: Event) -> bool;
 }
 
 /// Here plugins do their changes.
@@ -54,14 +54,14 @@ pub trait ImageEditorPlugin<E: Emit> {
     fn id() -> String;
     
     /// Plugin is starting to be used.
-    fn activate(self, canvas: &VirtualCanvas);
+    fn activate(&self, canvas: &VirtualCanvas);
     
     /// Plugin may draw some additional overlay there.
-    fn draw(self, canvas: &mut VirtualCanvas);
+    fn draw(&self, canvas: &mut VirtualCanvas);
 
     /// Return value: whether this plugin consumes the event.
-    fn act(self, ev: Event, canvas: &mut VirtualCanvas) -> bool;
+    fn act(&self, ev: Event, canvas: &mut VirtualCanvas) -> bool;
     
     /// Plugin is deactivated. It may be activated again later.
-    fn deactivate(self);
+    fn deactivate(&self);
 }

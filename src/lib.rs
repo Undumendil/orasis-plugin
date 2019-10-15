@@ -35,7 +35,7 @@ pub struct VirtualCanvas<'a> {
     /// ARGB data; access pixels with [y * width + x].
     pub data: &'a mut [u32],
 
-    pub o_widrh: u64,
+    pub o_width: u64,
     pub o_height: u64,
     /// Overlay as visible on the screen; access pixels with [y * o_width + x].
     pub overlay: &'a mut [char]

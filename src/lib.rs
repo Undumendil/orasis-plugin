@@ -41,7 +41,7 @@ pub struct VirtualCanvas<'a> {
     pub overlay: &'a mut [char]
 }
 
-pub trait ImageEditorPlugin {
+pub trait ImageEditorPlugin : Send {
     /// Store emitter to be able to send events later.
     fn setup(&mut self, emitter: std::sync::mpsc::Sender<Event>);
     
